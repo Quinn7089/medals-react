@@ -5,9 +5,10 @@ import './App.css';
 
 function App() {
 const  [countries, setCountries] = useState([
-  { id: 1, name: 'United States', gold: 2 },
-  { id: 2, name: 'China', gold: 3 },
-  { id: 3, name: 'France', gold: 0 },
+  { id: 1, name: 'United States' },
+  { id: 2, name: 'China'},
+  { id: 3, name: 'France'},
+
 ]);
 
   function handleDelete(countryId) {

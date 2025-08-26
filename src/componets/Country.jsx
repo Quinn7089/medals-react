@@ -1,9 +1,9 @@
+import Medals from "./Medals";
 
-
-export default function Country(props){
+export default function Country(props, medal){
   
     console.log(props);
-
+    console.log("Medals: ", medal);
 
     return (
         <table className="MedalTable" >
@@ -14,7 +14,7 @@ export default function Country(props){
             </tr>
             <tr>
                 <td className='GoldMedal'>
-                    Gold medals: {props.country.gold}
+                   <Medals    /> 
                 </td> 
             </tr>  
         </table>

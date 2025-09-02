@@ -1,20 +1,33 @@
 import Medals from "./Medals";
 
-export default function Country(props, medal){
+export default function Country(props){
   
     console.log(props);
-    console.log("Medals: ", medal);
+   
+    function getTotalMedalCount(){
+            return props.country.gold + props.country.silver + props.country.bronze;
+    }
+
+    console.log(getTotalMedalCount(), "this is total medals");
 
     return (
         <table className="MedalTable" >
             <tr>
                 <th className='TableHeader'>{props.country.name } 
+                 &nbsp; {getTotalMedalCount()}  
                 <button className="delete-button" onClick={() => props.onDelete(props.country.id)}>🗑️</button>
                 </th>
             </tr>
             <tr>
                 <td className='GoldMedal'>
-                   <Medals    /> 
+                   {props.medals.map((medal) => (
+                       <Medals key={medal.id} 
+                       medal={medal} 
+                       country={props.country} 
+                       onIncrement={props.onIncrement}
+                       onDecrement={props.onDecrement}
+                       />
+                   ))}
                 </td> 
             </tr>  
         </table>

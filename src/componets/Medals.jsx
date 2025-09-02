@@ -1,23 +1,20 @@
-import { useRef } from "react";
+import Country from "./Country";
+
 
 function Medals(props) {
- const medals = useRef([
-  { id: 1, name: "gold" },
-  { id: 2, name: "silver" },
-  { id: 3, name: "bronze" },
-]);
-
     return (
-    <div>
-        {medals.current.map((medal) => (
-            <div key={medal.id}>
-                {medal.name} <span>medals</span>
-            </div>
-        ))}
+    <div className="medal-container">
+       <span className="medal-name"> {props.medal.name} medals </span>  
+          <span className="medal-controls">
+            <button className="medal-remove" onClick={() => props.onDecrement(props.country.id, props.medal.name)}>-</button>
+          <div className="medal-count"> {props.country[props.medal.name]} </div>
+          <button className="medal-add" onClick={() => props.onIncrement(props.country.id, props.medal.name)}>+</button>
+        </span>
     </div>  
      
 
 
     );
 }
+
 export default Medals;

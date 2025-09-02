@@ -3,6 +3,17 @@ table {
   border:1px solid black;
   
 }
+
+.MedalTable {
+  margin-top: -10px;
+}
+
+.olympic-header {
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 1px;
+}
+
 td, th {
   border: 1px solid black;
   padding: 8px;
@@ -32,10 +43,36 @@ td, th {
   font-variant-numeric: tabular-nums;
 }
 
-.delete-button {
-  margin-left: auto;
-  background: none;
-  border: none;
-  font-size: 20px;
+.medal-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.medal-controls {
+  display: flex;
+  gap: 20px;
+}
+
+.medal-add, .medal-remove {
+  margin-top: 5px;
   cursor: pointer;
+  background-color: lightgray;
+}
+
+.medal-name, .medal-count {
+  margin-top: 5px;
+
+}
+
+.medal-add:hover, .medal-remove:hover {
+  background-color: white;
+
+}
+
+.delete-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
 }

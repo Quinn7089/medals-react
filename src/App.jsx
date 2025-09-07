@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import Country from "./componets/Country.jsx";
 import Medals from "./componets/Medals.jsx";
+import NewCountry from "./componets/NewCountry.jsx";
 import './App.css';
 
 
@@ -34,6 +35,11 @@ const medals = [
     setCountries(countriesMutable);
   }
 
+  function handleAdd(countryName) {
+    const newId = countries.length === 0 ? 1 : Math.max(...countries.map((c) => c.id)) + 1;
+    setCountries(countries.concat({ id: newId, name: countryName, gold: 0, silver: 0, bronze: 0 }));
+}
+
   function decrementMedal(countryId, medalName) {
     const countriesMutable = [...countries];
     const idx = countriesMutable.findIndex((c) => c.id === countryId);
@@ -65,6 +71,7 @@ const medals = [
         />
       ))}
       </div>
+      <NewCountry onAdd={handleAdd} />
     </>
   );
 }

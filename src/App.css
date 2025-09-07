@@ -76,3 +76,108 @@ td, th {
   cursor: pointer;
   font-size: 20px;
 }
+
+#trigger {
+  position: fixed;
+  left: 0.8rem;
+  bottom: 0.8rem;
+  cursor: pointer;
+  z-index: 80;
+  transform: scale(80%, 80%);
+  transition: transform 150ms ease-in-out;
+}
+#trigger:hover {
+  transform: rotate(90deg) scale(100%, 100%);
+}
+
+.addForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  width: 250px;
+  height: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* #overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+  cursor: pointer;
+} */
+
+input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.addTableHeader {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.country-input {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.save-button {
+  position: absolute;
+  left: 20px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: gray;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.save-button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  position: absolute;
+  right:  80px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: gray;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.save-button:hover, .cancel-button:hover {
+  background-color: white;
+}
